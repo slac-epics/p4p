@@ -1,0 +1,37 @@
+# RELEASE.local
+#
+# Read definitions of:
+#	EPICS_SITE_TOP
+#	BASE_MODULE_VERSION
+#	EPICS_MODULES 
+# from one of the following options
+-include $(TOP)/../../RELEASE_SITE
+-include $(TOP)/RELEASE_SITE
+
+# Check that EPICS_MODULES was defined in a RELEASE_SITE file
+-include $(TOP)/../../RELEASE_SITE.check
+
+# ==========================================================
+# Define the version strings for all needed modules
+# ==========================================================
+NORMATIVE_MODULE_VERSION	= R5.2.0-0.0.1
+PVACCESS_MODULE_VERSION		= R6.0.0-0.2.0
+PVACLIENT_MODULE_VERSION	= R4.3.0-0.1.0
+PVDATA_MODULE_VERSION		= R7.0.0-0.0.1
+PVDATABASE_MODULE_VERSION	= R4.2.0-0.1.1
+
+# ==========================================================
+# Define module paths using pattern
+# ==========================================================
+NORMATIVE	= $(EPICS_MODULES)/normativeTypesCPP/$(NORMATIVE_MODULE_VERSION)
+PVACCESS	= $(EPICS_MODULES)/pvAccessCPP/$(PVACCESS_MODULE_VERSION)
+PVACLIENT	= $(EPICS_MODULES)/pvaClientCPP/$(PVACLIENT_MODULE_VERSION)
+PVDATA		= $(EPICS_MODULES)/pvDataCPP/$(PVDATA_MODULE_VERSION)
+PVDATABASE	= $(EPICS_MODULES)/pvDatabaseCPP/$(PVDATABASE_MODULE_VERSION)
+
+# Set EPICS_BASE last so it appears last in the DB, DBD, INCLUDE, and LIB search paths
+EPICS_BASE = $(EPICS_SITE_TOP)/base/$(BASE_MODULE_VERSION)
+
+# Check for invalid or undefined EPICS_BASE
+-include $(TOP)/../../EPICS_BASE.check
+

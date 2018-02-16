@@ -1,0 +1,22 @@
+# CONFIG_SITE.local
+
+# Set this when you only want to compile this application
+#   for a subset of the cross-compiled target architectures
+#   that Base is built for.
+CROSS_COMPILER_TARGET_ARCHS := $(filter-out linux-x86,          $(CROSS_COMPILER_TARGET_ARCHS))
+
+PCDS_BUILD=NO
+ifneq (,$(findstring pcds,$(PSPKG_ROOT)))
+	PCDS_BUILD=YES
+endif
+
+# Python install prefix and version
+# Now defining PYTHON_DIR in configure/RELEASE.local
+ifeq '$(PCDS_BUILD)' 'YES'
+PYTHON_DIR := $(PSPKG_ROOT)/release/python/2.7.13/$(EPICS_HOST_ARCH)
+PYTHONPATH := $PYTHONPATH:$(PSPKG_ROOT)/release/numpy/1.14.0/$(EPICS_HOST_ARCH)/lib/python2.7/site-packages
+else
+PYTHON_DIR := $(PACKAGE_SITE_TOP)/python/python2.7.13/$(EPICS_HOST_ARCH)
+endif
+PYTHON := $(PYTHON_DIR)/bin/python
+

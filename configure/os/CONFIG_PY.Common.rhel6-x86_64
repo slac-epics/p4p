@@ -1,0 +1,8 @@
+TARGET_CFLAGS += -fno-strict-aliasing
+TARGET_CXXFLAGS += -fno-strict-aliasing
+PY_VER := 2.7
+PY_LD_VER := 2.7
+PY_INCDIRS := /afs/slac/g/pcds/pkg_mgr/release/numpy/1.14.0/rhel6-x86_64/lib/python2.7/site-packages/numpy-1.14.0-py2.7-linux-x86_64.egg/numpy/core/include /afs/slac/g/pcds/pkg_mgr/release/python/2.7.13/rhel6-x86_64/include/python2.7
+PY_LIBDIRS := /afs/slac/g/pcds/pkg_mgr/release/python/2.7.13/x86_64-rhel6-gcc44-opt/lib
+HAVE_NUMPY := YES
+PY_OK := YES
