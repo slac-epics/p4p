@@ -11,13 +11,11 @@ ifneq (,$(findstring pcds,$(PSPKG_ROOT)))
 endif
 
 # Python install prefix and version
-#PYTHON_FULL_VERSION=2.7.13
-PYTHON_FULL_VERSION=2.7.9
+PYTHON_FULL_VERSION=2.7.13
 
 # Now defining PYTHON_DIR in configure/RELEASE.local
 ifeq '$(PCDS_BUILD)' 'YES'
-#NUMPY_FULL_VERSION=1.14.0
-NUMPY_FULL_VERSION=1.11.1-0.0.1
+NUMPY_FULL_VERSION=1.14.0
 PYTHON_DIR := $(PSPKG_ROOT)/release/python/$(PYTHON_FULL_VERSION)/$(EPICS_HOST_ARCH)
 NUMPY_DIR  := $(PSPKG_ROOT)/release/numpy/$(NUMPY_FULL_VERSION)/$(EPICS_HOST_ARCH)
 PYTHONPATH := $PYTHONPATH:$(NUMPY_DIR)/lib/python2.7/site-packages
