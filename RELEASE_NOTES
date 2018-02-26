@@ -1,5 +1,9 @@
 #
 # SLAC Release notes
 #
+R1.0-0.0.2	2018-02-26	bhill
+	Built for python 2.7.9
+
 R1.0-0.0.1	2018-02-20	bhill
+	Built for pkg_mgr python 2.7.13
 	Add SLAC local build support.
