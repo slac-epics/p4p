@@ -1,6 +1,9 @@
 #
 # SLAC Release notes
 #
+R1.0-0.0.3	2018-02-26	bhill
+	Built for python 2.7.13
+
 R1.0-0.0.2	2018-02-26	bhill
 	Built for python 2.7.9
 
