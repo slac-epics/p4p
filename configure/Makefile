@@ -14,9 +14,11 @@ CONFIGS += $(subst ../,,$(wildcard $(CONFIG_INSTALLS)))
 
 include $(TOP)/configure/RULES
 
-../os/CONFIG_PY.Common.$(T_A): $(TOP)/makehelper.py
-	[ -d $(dir $@) ] || $(MKDIR) $(dir $@)
-	$(PYTHON) $< $@
+# Disable rebuild of os/CONFIG_PY.Common.$(T_A) as SLAC
+# version controls them instead of rebuilding based on env
+#../os/CONFIG_PY.Common.$(T_A): $(TOP)/makehelper.py
+#	[ -d $(dir $@) ] || $(MKDIR) $(dir $@)
+#	$(PYTHON) $< $@
 
 ifdef BASE_3_15
 realclean: py_clean
