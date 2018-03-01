@@ -15,10 +15,10 @@
 # Define the version strings for all needed modules
 # ==========================================================
 NORMATIVE_MODULE_VERSION	= R5.2.0-0.0.1
-PVACCESS_MODULE_VERSION		= R6.0.0-0.2.0
-PVACLIENT_MODULE_VERSION	= R4.3.0-0.1.0
+PVACCESS_MODULE_VERSION		= R6.0.0-0.3.0
+PVACLIENT_MODULE_VERSION	= R4.3.0-0.1.1
 PVDATA_MODULE_VERSION		= R7.0.0-0.0.1
-PVDATABASE_MODULE_VERSION	= R4.2.0-0.1.1
+PVDATABASE_MODULE_VERSION	= R4.3.0-0.0.3
 
 # ==========================================================
 # Define module paths using pattern

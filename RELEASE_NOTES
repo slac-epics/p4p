@@ -1,6 +1,11 @@
 #
 # SLAC Release notes
 #
+R1.0-0.0.4	2018-03-01	slepicka
+	Bumped PVAccessCPP  to R6.0.0-0.3.0
+	Bumped PVAClientCPP to R4.3.0-0.1.1
+	Bumped PVDatabase   to R4.3.0-0.0.3
+
 R1.0-0.0.3	2018-02-26	bhill
 	Built for python 2.7.13
 
