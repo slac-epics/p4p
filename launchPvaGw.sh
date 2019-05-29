@@ -1,25 +1,15 @@
 #!/bin/bash
 
 # Derive top directory for p4p.gw
-TOP=`readlink -f $(dirname $0)`
+SRC_SCRIPT=$(readlink -f ${BASH_SOURCE[0]})
+P4P_TOP=$(dirname $SRC_SCRIPT)
 
-source $TOP/pcds_setup_py36env.sh
+source $P4P_TOP/pcds_setup_py36env.sh
 
-PY_LD_VER=`python get_PY_LD_VER.py`
+# Set EPICS_PVA_* env variables before running this script
+# EPICS_PVAS_INTF_ADDR_LIST
 
-#echo pythonpathmunge $TOP/python${PY_LD_VER}/${EPICS_HOST_ARCH}
-source /reg/g/pcds/setup/pathmunge.sh
-pythonpathmunge $TOP/python${PY_LD_VER}/${EPICS_HOST_ARCH}
+source /reg/g/pcds/gateway/scripts/epicscagp
 
-# Set upstream port and IP addr
-# i.e. EPICS_PVA_* settings served by IOC's to PVA clients
-US_PORT=5076
-US_ADDR_LIST='172.21.42.255'
-
-# Set downstream port and IP addr
-# i.e. EPICS_PVA_* settings used by gateway to serve downstream clients
-DS_PORT=5086
-DS_ADDR_LIST='172.21.42.237'
-
-echo python -m p4p.gw --server "$DS_ADDR_LIST:$DS_PORT" --cip "$US_ADDR_LIST" --cport $US_PORT --prefix gw:
-python -m p4p.gw --server "$DS_ADDR_LIST:$DS_PORT" --cip "$US_ADDR_LIST" --cport $US_PORT --prefix gw:
+echo python -m p4p.gw --server "$DEV_IF4" --cip "$TST_BC $XCS_BC" --prefix PVA:GW:TST:
+python -m p4p.gw --server "$DEV_IF4" --cip "$TST_BC $XCS_BC" --prefix PVA:GW:TST:
