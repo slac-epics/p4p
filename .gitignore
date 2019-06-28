@@ -8,6 +8,7 @@
 /documentation/html
 /documentation/*.tag
 /python?.*/
+/p4ptest/
 envPaths
 !*configure/ExampleRELEASE.local
 O.*/
