@@ -9,10 +9,9 @@
 /documentation/*.tag
 /python?.*/
 envPaths
-*configure/*.local
 !*configure/ExampleRELEASE.local
 O.*/
 QtC-*
 *.so
 *.pyc
-*.local
+RELEASE_SITE
