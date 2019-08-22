@@ -581,6 +581,7 @@ class App(object):
                 'EPICS_PVAS_AUTO_BEACON_ADDR_LIST':{True:'YES', False:'NO'}[jsrv.get('autoaddrlist',True)],
                 # ignore list not fully implemented.  (aka. never populated or used)
             }
+            _log.info( 'EPICS_PVAS_INTF_ADDR_LIST=%s' % server_conf['EPICS_PVAS_INTF_ADDR_LIST'] )
             if 'bcastport' in jsrv:
                 server_conf['EPICS_PVAS_BROADCAST_PORT'] = str(jsrv['bcastport'])
             if 'serverport' in jsrv:
