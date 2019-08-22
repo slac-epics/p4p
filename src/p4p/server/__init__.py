@@ -102,6 +102,7 @@ class Server(object):
                 'EPICS_PVA_BROADCAST_PORT': '0',
             }
         _log.debug("Starting Server isolated=%s, %s", isolate, kws)
+        _log.info( "Server kws=%s" % kws )
         self._S = _Server(providers=Ps, **kws)
 
         _all_servers.add(self._S)
