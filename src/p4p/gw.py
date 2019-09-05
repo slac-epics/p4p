@@ -550,10 +550,10 @@ class App(object):
                 _log.warning('Each server interface will attempt to send beacons to all destinations')
                 jsrv.pop('addrlist')
 
+            baseName = jsrv['name']
             for idx, iface in enumerate(iface):
                 jsrv = jsrv.copy()
-                if idx!=0:
-                    jsrv['name'] = '%s_%d'%(jsrv['name'], idx)
+                jsrv['name'] = '%s_%d'%(baseName, idx)
                 jsrv['interface'] = iface
 
                 new_servers.append(jsrv)
