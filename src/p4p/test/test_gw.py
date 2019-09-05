@@ -300,6 +300,11 @@ class TestHighLevel(RefTestCase):
 
         self._app = TestApp(args)
         self._main = threading.Thread(target=self._app.run, name='GW Main')
+        _log.debug("DS server conf: %s", self._app.servers[u'server1_0'].conf())
+
+        # downstream client
+        #self._ds_client = Context('pva', conf=self._app.servers[u'server1_0'].conf(), useenv=False)
+
         self._main.start()
         return self._app.servers[u'server1_0'].conf()
 
