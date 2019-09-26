@@ -3,7 +3,6 @@
 source /reg/g/pcds/package/conda/env-miniconda3.sh
 conda activate pva-gw
 source $SETUP_SITE_TOP/epicsenv-bleeding_edge-7.0.sh 
-ldpathmunge /reg/neh/home/bhill/git-wa-neh/base-R7-git/lib/${EPICS_HOST_ARCH}
 source $PSPKG_ROOT/etc/add_env_pkg.sh procServ/2.7.0-1.3.0
 
 # The remainder of this script is generic for all SLAC EPICS env
