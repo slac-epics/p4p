@@ -7,9 +7,6 @@
 -include $(TOP)/../../RELEASE_SITE
 -include $(TOP)/RELEASE_SITE
 
-BASE_MODULE_VERSION=R7.0.2-1.0
-EPICS_MODULES=$(EPICS_SITE_TOP)/$(BASE_MODULE_VERSION)/modules
-
 # ==========================================================
 # Define the version strings for all needed modules
 # ==========================================================
