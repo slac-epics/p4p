@@ -3,7 +3,7 @@
 # Derive top directory for p4p.gw
 TOP=`readlink -f $(dirname $0)`
 
-source $TOP/pcds_setup_py36env.sh
+source $TOP/pcds_setup_env.sh
 
 PY_LD_VER=`python get_PY_LD_VER.py`
 
