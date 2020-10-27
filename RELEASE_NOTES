@@ -1,0 +1,8 @@
+# SLAC RELEASE_NOTES for PVA Gateway
+
+R3.5.1-1.0.0: 2020-10-26 Bruce Hill
+	First production PCDS Gateway release
+	Includes SLAC build and deployment support scripts
+	Source changes:
+		Make INFO msg re banning local server interfaces more clear.
+		Consistent server naming pattern. i.e. theServer_0, theServer_1, ...
