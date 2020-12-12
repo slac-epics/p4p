@@ -66,7 +66,11 @@ class PVList(object):
                     continue
 
                 parts = [part.strip() for part in line.split(None)]
-                pattern, cmd, parts = parts[0], parts[1].upper(), parts[2:]
+                try:
+                    pattern, cmd, parts = parts[0], parts[1].upper(), parts[2:]
+                except:
+                    _log.warn("line %s is invalid:\n%s"%(lineno, line))
+                    continue
 
                 # test compile
                 try:
@@ -114,7 +118,7 @@ class PVList(object):
                     raise RuntimeError("Unknown command: %s"%cmd)
 
             except Exception as e:
-                raise e.__class__("Error on line %s: %s"%(lineno, e))
+                raise e.__class__("Error on line %s: %s\n%s"%(lineno, e, line))
 
         deny_all = list(deny_all)
 
