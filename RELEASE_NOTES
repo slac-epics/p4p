@@ -1,5 +1,10 @@
 # SLAC RELEASE_NOTES for PVA Gateway
 
+R3.5.2-1.0.0: 2020-12-12 Bruce Hill
+	Allow NONE keyword in NOACCESS rules w/o warning messages.
+	pvlist case insensitive keyword comparisons.
+	Warn instead of raise exception for invalid pvlist patterns.
+
 R3.5.1-1.0.0: 2020-10-26 Bruce Hill
 	First production PCDS Gateway release
 	Includes SLAC build and deployment support scripts
