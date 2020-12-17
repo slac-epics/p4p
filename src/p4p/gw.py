@@ -445,7 +445,16 @@ class GWHandler(object):
         peer = socket.gethostbyname(peer)
         pvname, asg, asl = self.pvlist.compute(pv.encode('UTF-8'), peer)
         if not pvname:
-            raise RemoteError("Denied")
+            return permissionsType({
+                'pv':pv,
+                'account':user,
+                'peer':peer,
+                'roles':roles,
+                'asg':'DENIED',
+                'asl':0,
+                'permission': [ ('put', 'false'), ('rpc', 'false'),
+                                ('uncached', 'false'), ('audit', 'false') ]
+            })
 
         chan=TestChannel('<asTest>')
         self.acf.create(chan, asg, user, peer, asl, roles)
