@@ -476,7 +476,7 @@ Syntax
     asitem : INP[A-Z] ( "PVNAME" )
            : RULE ( ASL#, priv) rule_cond
            : RULE ( ASL#, priv, trap) rule_cond
-    priv : READ | WRITE | PUT | RPC | UNCACHED
+    priv : READ | WRITE | PUT | RPC | UNCACHED | NONE
     trap : TRAPWRITE | NOTRAPWRITE
     rule_cond : | { conds }
     conds : | cond conds
@@ -520,7 +520,11 @@ Privileges
 ``READ``
     Accepted for compatibility.
     PVA Gateway always allows read access for any PV which is allowed by the PV List file.
-    Use a ``DENY`` in a PV List file to prevent client(s) from reading/subscribing to certain PVs.
+
+``NONE``
+    Accepted for compatibility.
+    Blocks all access for any PV which matches this rule.
+    Similar to using a ``DENY`` in a PV List file to prevent client(s) from reading/subscribing to certain PVs.
 
 HAG Hostnames and IPs
 ~~~~~~~~~~~~~~~~~~~~~
