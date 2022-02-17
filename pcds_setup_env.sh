@@ -13,6 +13,10 @@ source $SETUP_SITE_TOP/epicsenv-7.0.3.1-2.0.sh
 this_script=`readlink -f ${BASH_SOURCE[0]}`
 P4P_TOP=`readlink -f $(dirname $this_script)`
 
+# Add pvxs to python path
+PVXS=/cds/group/pcds/epics-dev/bhill/extensions/pvxs-git 
+pythonpathmunge $PVXS/python
+
 # Add p4p to python path
 PY_LD_VER=`python $P4P_TOP/get_PY_LD_VER.py`
 pythonpathmunge $P4P_TOP/python${PY_LD_VER}/${EPICS_HOST_ARCH}
