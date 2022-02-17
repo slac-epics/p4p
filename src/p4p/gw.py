@@ -769,12 +769,15 @@ def main(args=None):
             pythonpath = [modroot]+pythonpath
 
         with open(os.path.join(os.path.dirname(__file__), catfile), 'r') as F:
-            O.write(F.read().format(
-                python=sys.executable,
-                inst=I,
-                conf=conf,
-                pythonpath=os.pathsep.join(pythonpath),
-            ))
+            catOutput = F.read()
+            if args.example_systemd:
+                # systemd example contains python format replacement fields
+                catOutput = catOutput.format(
+                    python=sys.executable,
+                    inst=I,
+                    conf=conf,
+                    pythonpath=os.pathsep.join(pythonpath))
+            O.write( catOutput )
 
         O.close()
         sys.exit(0)
