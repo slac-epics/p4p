@@ -10,6 +10,7 @@
 # ==========================================================
 # Define the version strings for all needed modules
 # ==========================================================
+PVXS_MODULE_VERSION		= R?
 
 # ==========================================================
 # External Support module path definitions
@@ -24,6 +25,9 @@
 #
 # If your build fails, look for these paths in your build output
 # ==========================================================
+#PVXS		= $(EPICS_SITE_TOP)/extensions/$(PVXS_MODULE_VERSION)
+
+PVXS		= /cds/group/pcds/epics-dev/bhill/extensions/pvxs-git
 
 # Set EPICS_BASE last so it appears last in the DB, DBD, INCLUDE, and LIB search paths
 EPICS_BASE = $(EPICS_SITE_TOP)/base/$(BASE_MODULE_VERSION)
