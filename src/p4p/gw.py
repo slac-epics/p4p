@@ -623,7 +623,7 @@ class App(object):
                 'EPICS_PVAS_INTF_ADDR_LIST':jsrv.get('interface', '0.0.0.0'),
                 'EPICS_PVAS_BEACON_ADDR_LIST':jsrv.get('addrlist', ''),
                 'EPICS_PVAS_AUTO_BEACON_ADDR_LIST':{True:'YES', False:'NO'}[jsrv.get('autoaddrlist',True)],
-                'EPICS_PVAS_IGNORE_ADDR_LIST':jsrv.get('ignoreaddr', ''),
+                'EPICS_PVAS_IGNORE_ADDR_LIST':' '.join(jsrv.get('ignoreaddr', '')),
             }
             if 'bcastport' in jsrv:
                 server_conf['EPICS_PVAS_BROADCAST_PORT'] = str(jsrv['bcastport'])
