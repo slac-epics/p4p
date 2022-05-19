@@ -1,5 +1,11 @@
 # SLAC RELEASE_NOTES for PVA Gateway
 
+R4.0.0-1.0.0:	2022-05-19 Bruce Hill
+	Update to pvxs/R0.2.3.0-0.0.1
+	Add an ignoreaddr in example.conf
+	EPICS_PVAS_IGNORE_ADDR_LIST needs to be a space separated string of ip addrs
+	Return a DENIED permissionsType instead of raising RemoteError Denied.
+
 R3.5.2-1.0.0: 2020-12-12 Bruce Hill
 	Allow NONE keyword in NOACCESS rules w/o warning messages.
 	pvlist case insensitive keyword comparisons.
