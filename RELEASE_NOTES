@@ -1,5 +1,8 @@
 # SLAC RELEASE_NOTES for PVA Gateway
 
+R4.0.0-1.0.1:	2022-06-21 Bruce Hill
+	Update to base/R7.0.6.1-1.0 and pvxs/R0.3.0-0.0.2
+
 R4.0.0-1.0.0:	2022-05-19 Bruce Hill
 	Update to pvxs/R0.2.3.0-0.0.1
 	Add an ignoreaddr in example.conf
