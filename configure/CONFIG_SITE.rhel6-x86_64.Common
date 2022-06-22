@@ -1,0 +1,3 @@
+# CONFIG_SITE.rhel6-x86_64.Common
+# Use devtoolset gnu toolchain
+GNU_DIR = /opt/rh/devtoolset-8/root/usr
