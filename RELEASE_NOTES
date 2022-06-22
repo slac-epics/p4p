@@ -1,5 +1,10 @@
 # SLAC RELEASE_NOTES for PVA Gateway
 
+R4.0.0-1.0.2:	2022-06-21 Bruce Hill
+	Needed to use devtoolset-8 for rhel6 build.
+	Also needed to "pathmunge /usr/bin" to get perl v5.10.1,
+	but before "source TOP/lcls_setup_py36.sh" or we get /usr/bin/python.
+
 R4.0.0-1.0.1:	2022-06-21 Bruce Hill
 	Update to base/R7.0.6.1-1.0 and pvxs/R0.3.0-0.0.2
 
