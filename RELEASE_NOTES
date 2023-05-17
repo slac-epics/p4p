@@ -2,6 +2,8 @@
 
 R4.1.6-1.0.0    2023-05-17 Jesse Bellister
        Update to pvxs/R1.2.0-0.1.0 and use base/R7.0.3.1-1.0
+       Point to the pvxs build under modules instead of extensions.
+       (Future pvxs builds should all go under modules)
 
 R4.0.0-1.0.2:	2022-06-21 Bruce Hill
 	Needed to use devtoolset-8 for rhel6 build.
