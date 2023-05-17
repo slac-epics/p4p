@@ -4,7 +4,7 @@
 # top directory each time this file is changed.
 
 #==============================================================================
-BASE_MODULE_VERSION=R7.0.6.1-1.0
+BASE_MODULE_VERSION=R7.0.3.1-1.0
 EPICS_SITE_TOP=/afs/slac/g/lcls/epics
 BASE_SITE_TOP=/afs/slac/g/lcls/epics/base
 EPICS_MODULES=/afs/slac/g/lcls/epics/R7.0.6.1-1.0/modules
