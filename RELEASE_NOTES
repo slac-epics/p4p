@@ -1,5 +1,10 @@
 # SLAC RELEASE_NOTES for PVA Gateway
 
+R4.1.7-1.0.0    2023-06-23 Jesse Bellister
+      Update to p4p version 4.1.7. Previous versions had an issue where
+      pvcall or eget clients would result in segfaults from the PVA gatweay.
+      This release contains an update from Doug Murray to fix that.
+
 R4.1.6-1.0.0    2023-05-17 Jesse Bellister
        Update to pvxs/R1.2.0-0.1.0 and use base/R7.0.3.1-1.0
        Point to the pvxs build under modules instead of extensions.
