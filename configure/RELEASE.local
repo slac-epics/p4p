@@ -10,7 +10,7 @@
 # ==========================================================
 # Define the version strings for all needed modules
 # ==========================================================
-PVXS_MODULE_VERSION		= R1.2.0-0.1.0
+PVXS_MODULE_VERSION		= R1.2.2-0.2.1
 
 # ==========================================================
 # External Support module path definitions
@@ -25,7 +25,7 @@ PVXS_MODULE_VERSION		= R1.2.0-0.1.0
 #
 # If your build fails, look for these paths in your build output
 # ==========================================================
-PVXS		= $(EPICS_SITE_TOP)/$(BASE_MODULE_VERSION)/modules/pvxs/$(PVXS_MODULE_VERSION)
+PVXS		= $(EPICS_SITE_TOP)/modules/$(BASE_MODULE_VERSION)/pvxs/$(PVXS_MODULE_VERSION)
 
 #PVXS		= /cds/group/pcds/epics-dev/bhill/extensions/pvxs-git
 
