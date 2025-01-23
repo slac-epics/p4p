@@ -1,0 +1,15 @@
+
+## How To Build
+
+Activate the correct Python 3.10 conda environment using:
+```
+source lcls_setup_py310.sh
+```
+
+Build using the following command:
+```
+make PYTHON=`which python3`
+```
+
+`PYTHON` must be an absolute path to the location of the Pythong executable, otherwise it will fallback to the system's Python.
+
