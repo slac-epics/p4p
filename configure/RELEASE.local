@@ -10,7 +10,7 @@
 # ==========================================================
 # Define the version strings for all needed modules
 # ==========================================================
-PVXS_MODULE_VERSION		= R1.2.2-0.2.1
+PVXS_MODULE_VERSION		= R1.2.2-0.2.0
 
 # ==========================================================
 # External Support module path definitions
