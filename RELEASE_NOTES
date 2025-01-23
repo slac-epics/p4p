@@ -1,4 +1,9 @@
 # SLAC RELEASE_NOTES for PVA Gateway
+R4.1.7-1.0.2    2024-01-22 Jeremy Lorelli
+    Remove old setup scripts, use Python 3.10 env only
+    Remove RELEASE_SITE, do not track in GIT
+    Revert pvxs version bump
+
 R4.1.7-1.0.1    2024-10-07 Jeremy Lorelli
     Update pvxs to R1.2.2-0.2.1
     Fix pvxs module path
