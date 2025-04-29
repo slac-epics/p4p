@@ -1,4 +1,7 @@
 # SLAC RELEASE_NOTES for PVA Gateway
+pre-release     2025-04-29 Jeremy Lorelli
+    Updated path of the rhel7 py3.10 env in lcls_setup_py310.sh
+
 R4.1.7-1.0.2    2024-01-22 Jeremy Lorelli
     Remove old setup scripts, use Python 3.10 env only
     Remove RELEASE_SITE, do not track in GIT
