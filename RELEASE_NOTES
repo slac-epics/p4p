@@ -1,4 +1,9 @@
 # SLAC RELEASE_NOTES for PVA Gateway
+R4.1.7-1.1.0    2025-09-17 Jeremy Lorelli
+    Update to Python 3.12
+    Fix build errors with new numpy versions
+    Update README_SLAC
+
 R4.1.7-1.0.2    2024-01-22 Jeremy Lorelli
     Remove old setup scripts, use Python 3.10 env only
     Remove RELEASE_SITE, do not track in GIT
