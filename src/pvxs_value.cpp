@@ -155,7 +155,7 @@ PyObject* asPy(const Value& v, bool unpackstruct, bool unpackrecurse, PyObject* 
 
     PyRef pyarr(PyArray_New(&PyArray_Type, 1, &shape, ntype, nullptr,
                             const_cast<void*>(varr.data()), // should not actually be modifiable
-                            esize, NPY_CARRAY_RO, nullptr));
+                            esize, NPY_ARRAY_CARRAY_RO, nullptr));
 
 #ifdef PyArray_SetBaseObject
     PyArray_SetBaseObject((PyArrayObject*)pyarr.obj, holder.release());
@@ -232,7 +232,7 @@ Value inferPy(PyObject* py)
         else if(PyList_Check(py))
             code = TypeCode::StringA;
         else if(PyArray_Check(py)) {
-            switch(PyArray_TYPE(py)) {
+            switch(PyArray_TYPE((PyArrayObject*)py)) {
 #define CASE(NTYPE, PTYPE) case NTYPE: code = TypeCode::PTYPE; break
             CASE(NPY_BOOL, BoolA); // bool stored as one byte
             CASE(NPY_INT8, Int8A);
@@ -525,14 +525,14 @@ void storePy(Value& v, PyObject* py)
                 throw std::logic_error(SB()<<"logic error in array Value assignment for "<<v.type());
             }
 
-            PyRef arr(PyArray_FromAny(py, PyArray_DescrFromType(ntype), 0, 0, NPY_CARRAY_RO, NULL));
+            PyRef arr(PyArray_FromAny(py, PyArray_DescrFromType(ntype), 0, 0, NPY_ARRAY_CARRAY_RO, NULL));
 
-            if(PyArray_NDIM(arr.obj)!=1)
+            if(PyArray_NDIM((PyArrayObject*)arr.obj)!=1)
                 throw std::logic_error("Only 1-d array can be assigned");
 
-            auto dest(allocArray(v.type().arrayType(), PyArray_DIM(arr.obj, 0)));
+            auto dest(allocArray(v.type().arrayType(), PyArray_DIM((PyArrayObject*)arr.obj, 0)));
 
-            memcpy(dest.data(), PyArray_DATA(arr.obj), PyArray_NBYTES(arr.obj));
+            memcpy(dest.data(), PyArray_DATA((PyArrayObject*)arr.obj), PyArray_NBYTES((PyArrayObject*)arr.obj));
 
             v = dest.freeze();
             return;
