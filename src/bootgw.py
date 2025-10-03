@@ -25,7 +25,7 @@ import os
 
 mypath = os.path.dirname(os.path.abspath(__file__))
 
-sys.path.append(os.path.join(mypath, '{pythonpath}'))
+sys.path.insert(0, os.path.join(mypath, '{pythonpath}'))
 
 from p4p.gw import main
 main()
