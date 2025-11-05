@@ -1,4 +1,7 @@
 # SLAC RELEASE_NOTES for PVA Gateway
+R4.1.7-1.1.1    2025-11-05 Jeremy Lorelli
+    Add local p4p dir to start of PYTHONPATH instead of end
+
 R4.1.7-1.1.0    2025-09-17 Jeremy Lorelli
     Update to Python 3.12
     Fix build errors with new numpy versions
